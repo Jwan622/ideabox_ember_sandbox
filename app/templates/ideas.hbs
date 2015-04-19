@@ -1,0 +1,18 @@
+<section id="new-idea">
+  <h2>Add a New Idea</h2>
+  <form class="new-idea-form">
+    <label>Title</label>
+    {{input type="text" placeholder="Title" class="new-idea-title" value=title}}
+    <label>Body</label>
+    {{input type="text" placeholder="Body" class="new-idea-body" value=body}}
+    <input type="submit" value="Submit Your Great Idea" {{action 'addNewIdea'}}>
+  </form>
+</section>
+
+<button type="button" name="button" {{action "changeSort" "title"}}>Sort by name</button>
+<button type="button" name="button" {{action "changeSort" "cost"}}>Sort by cost</button>
+<section id="ideas">
+  {{#each sortedIdeas as |idea|}}
+    {{awesome-idea idea=idea}}
+  {{/each}}
+</section>
