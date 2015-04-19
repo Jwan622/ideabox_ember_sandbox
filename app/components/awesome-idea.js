@@ -1,9 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
   editing: false,
-
   actions: {
     edit: function () {
       let editing = this.get('editing');
@@ -19,5 +17,4 @@ export default Ember.Component.extend({
       this.get('idea').destroyRecord();
     }
   }
-
 });

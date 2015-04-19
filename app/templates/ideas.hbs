@@ -9,8 +9,10 @@
   </form>
 </section>
 
+<button type="button" name="button" {{action "changeSort" "title"}}>Sort by name</button>
+<button type="button" name="button" {{action "changeSort" "cost"}}>Sort by cost</button>
 <section id="ideas">
-  {{#each model as |idea|}}
+  {{#each sortedIdeas as |idea|}}
     {{awesome-idea idea=idea}}
   {{/each}}
 </section>
